@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            width: 600px;
+            height: 80px;
+        }
+
+        table tr td {
+            border: 1px solid white;
+            border-collapse: collapse;
+            width: 25%;
+        }
+
+        button.bob {
+            width: 100%;
+            height: 80%;
+        }
+
+        input.bob {
+            width: 90%;
+            height: 80%;
+        }
+    </style>
+</head>
+<body>
+<h3>Base Caculator</h3>
+<table>
+    <tr>
+        <td colspan="2"><input class="bob" type="number" id="number1"></td>
+        <td colspan="2"><input class="bob" type="number" id="number2"></td>
+    </tr>
+    <tr>
+        <td>
+            <button class="bob" id="add" onclick="sum()">Addition(+)</button>
+        </td>
+        <td>
+            <button class="bob" id="sub" onclick="sub()">Subtraction(-)</button>
+        </td>
+        <td>
+            <button class="bob" id="mul" onclick="mul()">Multiplication(X)</button>
+        </td>
+        <td>
+            <button class="bob" id="div" onclick="div()">Division(/)</button>
+        </td>
+    </tr>
+    <p id="result"></p>
+</table>
+<table>
+    <tr>
+        <td colspan="2"><input class="bob" type="number" id="number01"></td>
+        <td colspan="2"><input class="bob" type="number" id="number02"></td>
+    </tr>
+    <tr>
+        <td>
+            <button class="bob" onclick="caculator('cong')">Addition(+)</button>
+        </td>
+        <td>
+            <button class="bob" onclick="caculator('tru')">Subtraction(-)</button>
+        </td>
+        <td>
+            <button class="bob" onclick="caculator('nhan')">Multiplication(X)</button>
+        </td>
+        <td>
+            <button class="bob" onclick="caculator('chia')">Division(/)</button>
+        </td>
+    </tr>
+
+</table>
+<p id="kqua"></p>
+
+<script>
+
+    function sum() {
+        let n1 = +document.getElementById('number1').value;
+        let n2 = +document.getElementById('number2').value;
+        let result = n1 + n2;
+        document.getElementById('result').innerHTML = 'Result Addition: ' + result;
+    }
+
+    function sub() {
+        let number1 = +document.getElementById('number1').value;
+        let number2 = +document.getElementById('number2').value;
+        let result = number1 - number2;
+        document.getElementById('result').innerHTML = 'Result Subtraction: ' + result;
+    }
+
+    function mul() {
+        let number3 = +document.getElementById('number1').value;
+        let number4 = +document.getElementById('number2').value;
+        let result = number3 * number4;
+        document.getElementById('result').innerHTML = 'Result Multiplication: ' + result;
+    }
+
+    function div() {
+        let number5 = +document.getElementById('number1').value;
+        let number6 = +document.getElementById('number2').value;
+        let result = number5 / number6;
+        document.getElementById('result').innerHTML = 'Result Division: ' + result;
+    }
+
+    function caculator(operator) {
+        let n01 = +document.getElementById("number01").value;
+        let n02 = +document.getElementById("number02").value;
+        let kqua = 0;
+
+        switch (operator) {
+            case 'cong':
+                kqua = n01 + n02;
+                break;
+            case 'tru':
+                kqua = n01 - n02;
+                break;
+            case 'nhan':
+                kqua = n01 * n02;
+                break;
+            case 'chia':
+                kqua = n01 / n02;
+                break;
+        }
+        document.getElementById('kqua').innerHTML = "Kết quản phép tính là: " + kqua;
+    }
+
+</script>
+</body>
+</html>
